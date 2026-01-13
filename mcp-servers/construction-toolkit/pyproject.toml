@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "construction-toolkit-mcp"
+version = "1.0.0"
+description = "MCP server for construction industry tools and data"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "mcp>=0.1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-asyncio>=0.21",
+]
+integrations = [
+    "sqlalchemy>=2.0",  # For database integrations
+    "httpx>=0.24",      # For API integrations
+    "openpyxl>=3.1",    # For Excel file handling
+    "pdfplumber>=0.10", # For PDF processing
+]
+
+[project.scripts]
+construction-toolkit = "server:main"
+
+[tool.setuptools]
+py-modules = ["server"]

@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "example-mcp"
+version = "1.0.0"
+description = "Example MCP server demonstrating basic patterns"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "mcp>=0.1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-asyncio>=0.21",
+]
+
+[project.scripts]
+example-mcp = "server:main"
+
+[tool.setuptools]
+py-modules = ["server"]
